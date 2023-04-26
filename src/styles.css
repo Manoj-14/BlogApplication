@@ -11,38 +11,38 @@
 }
 
 .bg-skyBlue {
-  background-color: var(--skyBlue);
+  background-color: var(--skyBlue) !important;
 }
 .text-skyBlue {
-  color: var(--skyBlue);
+  color: var(--skyBlue) !important;
 }
 
 .bg-blueGreen {
-  background-color: var(--blueGreen);
+  background-color: var(--blueGreen) !important;
 }
 .text-blueGreen {
-  color: var(--blueGreen);
+  color: var(--blueGreen) !important;
 }
 
 .bg-prussianBlue {
-  background-color: var(--prussianBlue);
+  background-color: var(--prussianBlue) !important;
 }
 .text-prussianBlue {
-  color: var(--prussianBlue);
+  color: var(--prussianBlue) !important;
 }
 
 .bg-selectiveYellow {
-  background-color: var(--selectiveYellow);
+  background-color: var(--selectiveYellow) !important;
 }
 .text-selectiveYellow {
-  color: var(--selectiveYellow);
+  color: var(--selectiveYellow) !important;
 }
 
 .bg-UTOrange {
-  background-color: var(--UTOrange);
+  background-color: var(--UTOrange) !important;
 }
 .text-UTOrange {
-  color: var(--UTOrange);
+  color: var(--UTOrange) !important;
 }
 
 .wrapper {

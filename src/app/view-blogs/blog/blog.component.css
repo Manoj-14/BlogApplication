@@ -1,3 +1,7 @@
 .transition {
   transition: all ease-in-out 2000ms;
 }
+
+.border-left {
+  border-left: 5px solid var(--selectiveYellow) !important;
+}

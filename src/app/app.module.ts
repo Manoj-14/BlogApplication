@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AddBlogComponent } from './add-blog/add-blog.component';
+import { AddBlogComponent } from './view-blogs/add-blog/add-blog.component';
 import { FormsModule } from '@angular/forms';
 import { ViewBlogsComponent } from './view-blogs/view-blogs.component';
 import { BlogComponent } from './view-blogs/blog/blog.component';

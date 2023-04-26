@@ -1,0 +1,14 @@
+<div class="card m-2">
+  <div class="card-body">
+    <h4 class="card-title">{{ blogInp.title }}</h4>
+    <p class="card-text">{{ blogInp.content | contentLength : contentLen }}</p>
+    <button
+      [disabled]="blogInp.content.length <= 200"
+      href="#"
+      class="btn btn-danger btn-sm"
+      (click)="onExpandMore()"
+    >
+      {{ btnStatus }}
+    </button>
+  </div>
+</div>

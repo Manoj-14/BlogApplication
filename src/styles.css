@@ -1,4 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Colors */
+.bg-skyBlue {
+  background-color: #8ecae6;
+}
+.text-skyBlue {
+  color: #8ecae6;
+}
+
+.bg-blueGreen {
+  background-color: #219ebc;
+}
+.text-blueGreen {
+  color: #219ebc;
+}
+
+.bg-prussianBlue {
+  background-color: #023047;
+}
+.text-prussianBlue {
+  color: #023047;
+}
+
+.bg-selectiveYellow {
+  background-color: #ffb703;
+}
+.text-selectiveYellow {
+  color: #ffb703;
+}
+
+.bg-UTOrange {
+  background-color: #fb8500;
+}
+.text-UTOrange {
+  color: #fb8500;
+}
+
 .wrapper {
   margin-top: 4rem;
 }

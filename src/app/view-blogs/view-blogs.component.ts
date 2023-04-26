@@ -14,10 +14,18 @@ export class ViewBlogsComponent implements OnInit {
   }
 
   blogs: blog[] = [];
+  error: string;
+  fetching: boolean = true;
 
   fetchposts() {
-    this.blogService.fetchposts().subscribe((response) => {
-      this.blogs = response;
-    });
+    this.blogService.fetchposts().subscribe(
+      (response) => {
+        this.blogs = response;
+        this.fetching = false;
+      },
+      (err) => {
+        this.error = err.message;
+      }
+    );
   }
 }

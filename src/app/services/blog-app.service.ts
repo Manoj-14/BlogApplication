@@ -22,12 +22,20 @@ export class BlogAppService {
         for (const key in resp) {
           blogArr.push({
             title: resp[key].title,
-            content: resp[key].content,
+            content: resp[key].content.replace(/\s\s+/g, ' '),
             id: resp[key].id,
           });
         }
         return blogArr;
       })
     );
+  }
+
+  DeletePost(id: number) {
+    return this.httpClient.delete(`${this.url}/${id}`);
+  }
+
+  updatePost(updatedPost: blog) {
+    return this.httpClient.put(`${this.url}/${updatedPost.id}`, updatedPost);
   }
 }

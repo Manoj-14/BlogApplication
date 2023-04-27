@@ -10,11 +10,14 @@ import { ViewBlogsComponent } from './view-blogs/view-blogs.component';
 import { BlogComponent } from './view-blogs/blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentLengthPipe } from './pipes/content-length.pipe';
+import { ModifyBlogsComponent } from './view-blogs/modify-blogs/modify-blogs.component';
+import { ModifyBlogComponent } from './view-blogs/modify-blogs/blog/blog.component';
 
 const appRouts: Routes = [
   { path: '', component: HomeComponent },
   { path: 'AddBlog', component: AddBlogComponent },
   { path: 'ViewBlogs', component: ViewBlogsComponent },
+  { path: 'ModifyBlogs', component: ModifyBlogsComponent },
 ];
 
 @NgModule({
@@ -25,6 +28,8 @@ const appRouts: Routes = [
     ViewBlogsComponent,
     BlogComponent,
     ContentLengthPipe,
+    ModifyBlogsComponent,
+    ModifyBlogComponent,
   ],
   imports: [
     BrowserModule,

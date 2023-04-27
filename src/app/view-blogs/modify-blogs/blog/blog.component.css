@@ -1,0 +1,15 @@
+.btn-align {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.modify-textarea {
+  width: 100%;
+  height: auto;
+  border: none;
+  resize: none;
+}
+
+.modify-textarea::-webkit-scrollbar {
+  display: none;
+}

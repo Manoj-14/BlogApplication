@@ -35,6 +35,14 @@
         >
           <a routerLink="/ViewBlogs" class="nav-link">View Blogs</a>
         </li>
+        <li
+          class="nav-item"
+          role="presentation"
+          routerLinkActive="route-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/ModifyBlogs" class="nav-link">Modify Blogs</a>
+        </li>
       </ul>
     </div>
   </div>

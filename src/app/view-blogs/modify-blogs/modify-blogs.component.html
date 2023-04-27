@@ -1,0 +1,15 @@
+<div class="container wrapper">
+  <h1 class="text-center m-2">Blogs</h1>
+  <div class="alert alert-danger text-center" *ngIf="error">
+    <strong>Server Error: </strong>{{ error }}
+  </div>
+  <div class="alert alert-info text-center" *ngIf="fetching && !error">
+    <strong>Loading...</strong>
+  </div>
+  <div *ngIf="!fetching">
+    <app-blog-modify
+      *ngFor="let blog of dbPosts"
+      [blogInp]="blog"
+    ></app-blog-modify>
+  </div>
+</div>

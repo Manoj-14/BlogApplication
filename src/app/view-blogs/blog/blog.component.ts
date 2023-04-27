@@ -13,9 +13,6 @@ export class BlogComponent {
 
   contentLen: number = 200;
 
-  @Output()
-  postDeleted = new EventEmitter<{ deleted: boolean }>();
-
   onExpandMore() {
     if (this.contentLen == 200) {
       this.contentLen = this.blogInp.content.length;

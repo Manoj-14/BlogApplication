@@ -1,0 +1,33 @@
+<div class="card m-4 border-left">
+  <div class="card-body">
+    <input
+      class="card-title h4 modify-textarea"
+      [readOnly]="!editContent"
+      [(ngModel)]="blogInp.title"
+    />
+    <textarea
+      class="card-text modify-textarea"
+      [readOnly]="!editContent"
+      [(ngModel)]="blogInp.content"
+    ></textarea>
+    <div class="btn-align">
+      <button
+        [disabled]="blogInp.content.length <= 200"
+        href="#"
+        class="btn btn-sm text-light bg-UTOrange"
+      >
+        View More
+      </button>
+      <button href="#" class="btn btn-sm btn-danger" (click)="onDeletePost()">
+        Delete
+      </button>
+      <button
+        href="#"
+        class="btn btn-danger btn-sm bg-UTOrange"
+        (click)="onEditText()"
+      >
+        Modify
+      </button>
+    </div>
+  </div>
+</div>

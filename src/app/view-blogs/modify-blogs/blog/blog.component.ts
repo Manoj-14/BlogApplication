@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { blog } from '../../blog/blog.interface';
 import { BlogAppService } from 'src/app/services/blog-app.service';
 
@@ -7,8 +15,9 @@ import { BlogAppService } from 'src/app/services/blog-app.service';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
 })
-export class ModifyBlogComponent {
+export class ModifyBlogComponent implements OnInit {
   constructor(private blogService: BlogAppService) {}
+  ngOnInit(): void {}
 
   @Input()
   blogInp: blog;
@@ -17,6 +26,7 @@ export class ModifyBlogComponent {
   postDeleted = new EventEmitter<{ deleted: boolean }>();
 
   editContent: boolean = false;
+  textarea: HTMLTextAreaElement = document.querySelector('.modify-textarea');
 
   onDeletePost() {
     this.blogService.DeletePost(this.blogInp.id).subscribe(() => {
@@ -31,6 +41,4 @@ export class ModifyBlogComponent {
     }
     this.editContent = !this.editContent;
   }
-
-  initPostValues = (postData: blog) => {};
 }

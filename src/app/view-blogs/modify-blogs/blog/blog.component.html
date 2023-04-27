@@ -7,9 +7,10 @@
     />
     <textarea
       class="card-text modify-textarea"
-      [readOnly]="!editContent"
       [(ngModel)]="blogInp.content"
+      [readOnly]="!editContent"
     ></textarea>
+
     <div class="btn-align">
       <button
         [disabled]="blogInp.content.length <= 200"

@@ -26,7 +26,7 @@ export class ModifyBlogComponent implements OnInit {
   postDeleted = new EventEmitter<{ deleted: boolean }>();
 
   editContent: boolean = false;
-  textarea: HTMLTextAreaElement = document.querySelector('.modify-textarea');
+  modifyBtn: string = 'Modify Post';
 
   onDeletePost() {
     this.blogService.DeletePost(this.blogInp.id).subscribe(() => {
@@ -35,9 +35,15 @@ export class ModifyBlogComponent implements OnInit {
   }
   onEditText() {
     if (this.editContent == true) {
-      this.blogService.updatePost(this.blogInp).subscribe((resp) => {
-        console.log(this.blogInp + ':' + resp);
-      });
+      this.modifyBtn = 'Modify Post';
+      this.blogService.updatePost(this.blogInp).subscribe((resp) => {});
+    } else {
+      this.modifyBtn = 'Save Poast';
+      const textarea: HTMLTextAreaElement = document.querySelector(
+        `#txt${this.blogInp.id}`
+      );
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
     }
     this.editContent = !this.editContent;
   }

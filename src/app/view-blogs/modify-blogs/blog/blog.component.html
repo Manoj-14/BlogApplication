@@ -1,14 +1,28 @@
-<div class="card m-4 border-left">
+<div
+  class="card m-4 border-left"
+  [ngClass]="{
+    'border-full-modify': editContent,
+  }"
+>
   <div class="card-body">
     <input
       class="card-title h4 modify-textarea"
       [readOnly]="!editContent"
       [(ngModel)]="blogInp.title"
+      [ngClass]="{
+        '.modify-textarea-outline-updating': editContent,
+        '.modify-textarea-outline': !editContent
+      }"
     />
     <textarea
       class="card-text modify-textarea"
       [(ngModel)]="blogInp.content"
       [readOnly]="!editContent"
+      [ngClass]="{
+        '.modify-textarea-outline-updating': editContent,
+        '.modify-textarea-outline': !editContent
+      }"
+      [id]="'txt' + blogInp.id"
     ></textarea>
 
     <div class="btn-align">
@@ -27,7 +41,7 @@
         class="btn btn-danger btn-sm bg-UTOrange"
         (click)="onEditText()"
       >
-        Modify
+        {{ modifyBtn }}
       </button>
     </div>
   </div>

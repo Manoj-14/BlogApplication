@@ -27,6 +27,7 @@ export class ModifyBlogComponent implements OnInit {
 
   editContent: boolean = false;
   modifyBtn: string = 'Modify Post';
+  postSaved: boolean = false;
 
   onDeletePost() {
     this.blogService.DeletePost(this.blogInp.id).subscribe(() => {
@@ -36,7 +37,12 @@ export class ModifyBlogComponent implements OnInit {
   onEditText() {
     if (this.editContent == true) {
       this.modifyBtn = 'Modify Post';
-      this.blogService.updatePost(this.blogInp).subscribe((resp) => {});
+      this.blogService.updatePost(this.blogInp).subscribe((resp) => {
+        this.postSaved = true;
+        setTimeout(() => {
+          this.postSaved = false;
+        }, 3000);
+      });
     } else {
       this.modifyBtn = 'Save Poast';
       const textarea: HTMLTextAreaElement = document.querySelector(

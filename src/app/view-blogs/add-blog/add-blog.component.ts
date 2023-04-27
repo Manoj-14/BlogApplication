@@ -21,6 +21,9 @@ export class AddBlogComponent {
       this.blogAdded = true;
       form.reset();
       this.contextLen = '';
+      setTimeout(() => {
+        this.blogAdded = false;
+      }, 5000);
     });
   }
 }

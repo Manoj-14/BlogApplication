@@ -1,7 +1,9 @@
 .btn-align {
   width: 100%;
   display: flex;
+  align-items: center !important;
   gap: 10px;
+  flex-wrap: wrap !important;
 }
 .modify-textarea {
   width: 100%;
@@ -11,7 +13,7 @@
 }
 
 .modify-textarea-outline {
-  outline: none;
+  outline: none !important;
 }
 
 .modify-textarea::-webkit-scrollbar {
@@ -24,10 +26,12 @@
 }
 
 .border-full-modify {
-  border: 5px solid var(--selectiveYellow) !important;
+  border: 5px solid var(--UTOrange) !important;
   transition: border ease-in-out 500ms;
 }
 
-.modify-textarea-outline-updating {
-  outline: 2px black !important;
+.alert {
+  padding: 3px !important;
+  margin-left: auto;
+  margin-top: auto;
 }

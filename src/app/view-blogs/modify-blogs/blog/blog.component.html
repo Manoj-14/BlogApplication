@@ -10,8 +10,7 @@
       [readOnly]="!editContent"
       [(ngModel)]="blogInp.title"
       [ngClass]="{
-        '.modify-textarea-outline-updating': editContent,
-        '.modify-textarea-outline': !editContent
+        'modify-textarea-outline': !editContent
       }"
     />
     <textarea
@@ -19,8 +18,7 @@
       [(ngModel)]="blogInp.content"
       [readOnly]="!editContent"
       [ngClass]="{
-        '.modify-textarea-outline-updating': editContent,
-        '.modify-textarea-outline': !editContent
+        'modify-textarea-outline': !editContent
       }"
       [id]="'txt' + blogInp.id"
     ></textarea>
@@ -43,6 +41,9 @@
       >
         {{ modifyBtn }}
       </button>
+      <div class="alert alert-success" *ngIf="postSaved">
+        Successfully Updated
+      </div>
     </div>
   </div>
 </div>

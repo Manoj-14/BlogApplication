@@ -28,4 +28,7 @@ export class ModifyBlogsComponent implements OnInit {
       }
     );
   }
+  onPostDelete() {
+    this.fetchPosts();
+  }
 }

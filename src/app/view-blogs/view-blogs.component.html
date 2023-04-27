@@ -7,6 +7,12 @@
     <strong>Loading...</strong>
   </div>
   <div *ngIf="!fetching && !error">
+    <div
+      class="alert alert-info bg-UTOrange text-light text-center"
+      *ngIf="blogs.length <= 0"
+    >
+      <strong>No Post Available</strong>
+    </div>
     <app-blog *ngFor="let myBlog of blogs" [blogInp]="myBlog">{{
       myBlog.title
     }}</app-blog>

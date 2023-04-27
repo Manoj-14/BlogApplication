@@ -7,9 +7,16 @@
     <strong>Loading...</strong>
   </div>
   <div *ngIf="!fetching">
+    <div
+      class="alert alert-info bg-UTOrange text-light   text-center"
+      *ngIf="dbPosts.length <= 0"
+    >
+      <strong>No Post Available</strong>
+    </div>
     <app-blog-modify
       *ngFor="let blog of dbPosts"
       [blogInp]="blog"
+      (postDeleted)="onPostDelete()"
     ></app-blog-modify>
   </div>
 </div>

@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 /* Colors */
 
 :root {
@@ -8,6 +7,7 @@
   --prussianBlue: #023047;
   --selectiveYellow: #ffb703;
   --UTOrange: #fb8500;
+  --secondary-color1: #d90429;
 }
 
 .bg-skyBlue {
@@ -49,24 +49,6 @@
   margin-top: 4rem;
 }
 
-.nav-bg {
-  background-color: #023047;
-}
-.navbar-nav {
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.navbar-nav > li {
-  font-weight: bolder;
-  padding: 0.2px 20px;
-}
-
-nav .navbar-nav li a {
-  color: white !important;
-}
-
-.route-active {
-  border: 2px solid white;
-  border-radius: 5px;
+mat-icon {
+  color: black !important;
 }

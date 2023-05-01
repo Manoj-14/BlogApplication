@@ -17,7 +17,7 @@
           routerLinkActive="route-active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a routerLink="/" class="nav-link">Home</a>
+          <a routerLink="/" class="nav-link" id="router-link">Home</a>
         </li>
         <li
           class="nav-item"
@@ -25,7 +25,9 @@
           routerLinkActive="route-active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a routerLink="/AddBlog" class="nav-link">Add Blog</a>
+          <a routerLink="/AddBlog" class="nav-link" id="router-link"
+            >Add Blog</a
+          >
         </li>
         <li
           class="nav-item"
@@ -33,7 +35,9 @@
           routerLinkActive="route-active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a routerLink="/ViewBlogs" class="nav-link">View Blogs</a>
+          <a routerLink="/ViewBlogs" class="nav-link" id="router-link"
+            >View Blogs</a
+          >
         </li>
         <li
           class="nav-item"
@@ -41,12 +45,14 @@
           routerLinkActive="route-active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a routerLink="/ModifyBlogs" class="nav-link">Modify Blogs</a>
+          <a routerLink="/ModifyBlogs" class="nav-link" id="router-link"
+            >Modify Blogs</a
+          >
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<div>
+<div class="router-display">
   <router-outlet></router-outlet>
 </div>

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContentLengthPipe } from './pipes/content-length.pipe';
 import { ModifyBlogsComponent } from './view-blogs/modify-blogs/modify-blogs.component';
 import { ModifyBlogComponent } from './view-blogs/modify-blogs/blog/blog.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const appRouts: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +37,7 @@ const appRouts: Routes = [
     RouterModule.forRoot(appRouts),
     FormsModule,
     HttpClientModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

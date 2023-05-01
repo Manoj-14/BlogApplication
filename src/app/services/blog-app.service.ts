@@ -11,8 +11,7 @@ export class BlogAppService {
   constructor(private httpClient: HttpClient) {}
 
   URL: string = 'http://localhost:3000/posts';
-  API_KEY = '6d207e02198a847aa98d0a2a901485a5';
-  FILE_UPLOAD_URL = `https://freeimage.host/${this.API_KEY}/1/upload`;
+  FILE_UPLOAD_URL = `http://localhost:3000/images`;
 
   createPost(postData: blog) {
     return this.httpClient.post(this.URL, postData);
@@ -23,11 +22,7 @@ export class BlogAppService {
       map((resp) => {
         const blogArr = [];
         for (const key in resp) {
-          blogArr.push({
-            title: resp[key].title,
-            content: resp[key].content.replace(/\s\s+/g, ' '),
-            id: resp[key].id,
-          });
+          blogArr.push(resp[key]);
         }
         return blogArr;
       })
@@ -43,7 +38,17 @@ export class BlogAppService {
   }
 
   uploadFile(file: File) {
-    let formData: { image: File } = { image: file };
+    let formData = new FormData();
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageBase64 = reader.result as string;
+
+      const payload = {
+        image: imageBase64,
+      };
+    };
+
     return this.httpClient.post(this.FILE_UPLOAD_URL, formData);
   }
 }

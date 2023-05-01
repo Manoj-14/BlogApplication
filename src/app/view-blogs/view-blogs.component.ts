@@ -21,6 +21,7 @@ export class ViewBlogsComponent implements OnInit {
     this.blogService.fetchposts().subscribe(
       (response) => {
         this.blogs = response;
+        console.log(this.blogs);
         this.fetching = false;
       },
       (err) => {

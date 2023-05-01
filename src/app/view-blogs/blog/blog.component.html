@@ -1,5 +1,6 @@
 <div class="card m-4 border-left">
   <div class="card-body">
+    <img src="{{ blogInp.image }}" alt="{{ blogInp.title }}" srcset="" />
     <h4 class="card-title">{{ blogInp.title }}</h4>
     <p class="card-text">{{ blogInp.content | contentLength : contentLen }}</p>
     <button

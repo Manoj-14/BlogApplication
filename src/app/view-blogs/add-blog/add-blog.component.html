@@ -14,10 +14,26 @@
     <form #f="ngForm">
       <div class="form">
         <div class="form-group">
-          <label for="title" class="form-label">Title</label>
+          <label for="title" class="form-label"
+            >Author <span class="imp">*</span></label
+          >
           <input
             type="text"
-            placeholder="Enter username"
+            placeholder="Enter Author Name"
+            name="author"
+            class="form-control"
+            id="title"
+            ngModel
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="title" class="form-label"
+            >Title <span class="imp">*</span></label
+          >
+          <input
+            type="text"
+            placeholder="Enter Title"
             name="title"
             class="form-control"
             id="title"
@@ -26,15 +42,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="content">Content</label>
+          <label for="content">Content <span class="imp">*</span></label>
           <textarea
             type="text"
             placeholder="Enter content"
             name="content"
             class="form-control"
             id="content"
-            cols="45"
-            rows="6"
+            cols="35"
+            rows="4"
             ngModel
             [(ngModel)]="contextLen"
             minlength="200"
@@ -42,6 +58,26 @@
           ></textarea>
           <small class="form-text text-muted"
             >Min: {{ contextLen.length }}/200 letters</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="img" class="form-label"
+            >Add Images <span class="imp">*</span></label
+          >
+          <input
+            type="url"
+            name="image"
+            class="form-control"
+            id="img"
+            placeholder="Enter Image URI"
+            accept="image/png, image/jpeg,image/jpg"
+            url
+            required
+            ngModel
+            (change)="onChange($event)"
+          />
+          <small class="form-text text-muted">
+            You can add only one image</small
           >
         </div>
         <div class="form-group">

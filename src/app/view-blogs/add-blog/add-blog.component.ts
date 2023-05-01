@@ -12,10 +12,16 @@ export class AddBlogComponent {
   contextLen: string = '';
   blogAdded: boolean = false;
   title: string;
+  file: File = null;
 
   constructor(private blogService: BlogAppService) {}
 
+  onChange(event) {
+    this.file = event.target.files[0];
+  }
+
   onBlogSubmit(blogData: blog, form: NgForm) {
+    console.log(blogData);
     this.blogService.createPost(blogData).subscribe(() => {
       this.title = blogData.title;
       this.blogAdded = true;

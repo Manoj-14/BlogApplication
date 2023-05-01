@@ -52,12 +52,13 @@
             cols="35"
             rows="4"
             ngModel
-            [(ngModel)]="contextLen"
+            [(ngModel)]="content"
             minlength="200"
             required
+            (keyup)="updateContentLen()"
           ></textarea>
           <small class="form-text text-muted"
-            >Min: {{ contextLen.length }}/200 letters</small
+            >Min: {{ contentLen }}/200 letters</small
           >
         </div>
         <div class="form-group">
@@ -85,7 +86,7 @@
             type="submit"
             placeholder="Enter Content"
             name="username"
-            [disabled]="!f.valid"
+            [disabled]="!f.valid || contentLen < 200"
             class="form-control btn btn-primary"
             id="title"
             (click)="onBlogSubmit(f.value, f)"

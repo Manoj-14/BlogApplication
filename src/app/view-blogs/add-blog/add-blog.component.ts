@@ -9,7 +9,8 @@ import { BlogAppService } from '../../services/blog-app.service';
   styleUrls: ['./add-blog.component.css'],
 })
 export class AddBlogComponent {
-  contextLen: string = '';
+  content: string = '';
+  contentLen: number = 0;
   blogAdded: boolean = false;
   title: string;
   file: File = null;
@@ -20,13 +21,18 @@ export class AddBlogComponent {
     this.file = event.target.files[0];
   }
 
+  updateContentLen() {
+    const content_list = this.content.split(' ').filter((elem) => elem != '');
+    this.contentLen = content_list.length;
+  }
+
   onBlogSubmit(blogData: blog, form: NgForm) {
     console.log(blogData);
     this.blogService.createPost(blogData).subscribe(() => {
       this.title = blogData.title;
       this.blogAdded = true;
       form.reset();
-      this.contextLen = '';
+      this.contentLen = 0;
       setTimeout(() => {
         this.blogAdded = false;
       }, 5000);

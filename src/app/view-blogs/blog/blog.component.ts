@@ -11,14 +11,14 @@ export class BlogComponent {
   blogInp: blog;
   btnStatus: string = 'Read More';
 
-  contentLen: number = 200;
+  contentLen: number = 500;
 
   onExpandMore() {
-    if (this.contentLen == 200) {
+    if (this.contentLen == 500) {
       this.contentLen = this.blogInp.content.length;
       this.btnStatus = 'Read Less';
     } else {
-      this.contentLen = 200;
+      this.contentLen = 500;
       this.btnStatus = 'Read More';
     }
   }

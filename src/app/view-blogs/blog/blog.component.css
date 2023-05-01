@@ -5,3 +5,10 @@
 .border-left {
   border-left: 5px solid var(--selectiveYellow) !important;
 }
+
+#card-img {
+  width: 15vw;
+  height: 35vh;
+  float: left;
+  margin: 10px;
+}

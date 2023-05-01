@@ -1,15 +1,30 @@
-<div class="card m-4 border-left">
-  <div class="card-body">
-    <img src="{{ blogInp.image }}" alt="{{ blogInp.title }}" srcset="" />
-    <h4 class="card-title">{{ blogInp.title }}</h4>
-    <p class="card-text">{{ blogInp.content | contentLength : contentLen }}</p>
-    <button
-      [disabled]="blogInp.content.length <= 200"
-      href="#"
-      class="btn btn-danger btn-sm bg-UTOrange"
-      (click)="onExpandMore()"
-    >
-      {{ btnStatus }}
-    </button>
+<div class="card m-4 border-left p-2">
+  <div class="">
+    <img
+      class="card-img-top"
+      id="card-img"
+      src="{{ blogInp.image }}"
+      alt="{{ blogInp.title }}"
+    />
+    <div class="card-body">
+      <div>
+        <h4 class="card-title d-inline-block">{{ blogInp.title }}</h4>
+        <small class="text-muted">
+          Written By {{ blogInp.author | uppercase }}.</small
+        >
+        <p class="card-text">
+          {{ blogInp.content | contentLength : contentLen }}
+        </p>
+        <p class="card-text"></p>
+        <button
+          [disabled]="blogInp.content.length <= 200"
+          href="#"
+          class="btn btn-danger btn-sm bg-UTOrange"
+          (click)="onExpandMore()"
+        >
+          {{ btnStatus }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>

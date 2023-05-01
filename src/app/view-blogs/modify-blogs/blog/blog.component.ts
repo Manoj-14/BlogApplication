@@ -22,6 +22,10 @@ export class ModifyBlogComponent implements OnInit {
   @Input()
   blogInp: blog;
 
+  btnStatus: string = 'Read More';
+
+  contentLen: number = 500;
+
   @Output()
   postDeleted = new EventEmitter<{ deleted: boolean }>();
 
@@ -43,14 +47,33 @@ export class ModifyBlogComponent implements OnInit {
           this.postSaved = false;
         }, 3000);
       });
+      this.editContent = false;
     } else {
       this.modifyBtn = 'Save Poast';
-      const textarea: HTMLTextAreaElement = document.querySelector(
-        `#txt${this.blogInp.id}`
-      );
-      textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
+      this.editContent = true;
     }
-    this.editContent = !this.editContent;
+  }
+
+  onExpandMore() {
+    if (this.contentLen == 500) {
+      this.contentLen = this.blogInp.content.length;
+      this.btnStatus = 'Read Less';
+    } else {
+      this.contentLen = 500;
+      this.btnStatus = 'Read More';
+    }
+  }
+
+  onConcelEdit() {
+    this.editContent = false;
+    this.modifyBtn = 'Modify Post';
+  }
+
+  onTextareaLoad() {
+    const textarea: HTMLTextAreaElement = document.querySelector(
+      `#txt${this.blogInp.id}`
+    );
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
   }
 }

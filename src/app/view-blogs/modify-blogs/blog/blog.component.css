@@ -5,21 +5,6 @@
   gap: 10px;
   flex-wrap: wrap !important;
 }
-.modify-textarea {
-  width: 100%;
-  border: none;
-  resize: none;
-  overflow-y: none !important;
-}
-
-.modify-textarea-outline {
-  outline: none !important;
-}
-
-.modify-textarea::-webkit-scrollbar {
-  display: none;
-}
-
 .border-left {
   border-left: 5px solid var(--selectiveYellow) !important;
   transition: border ease-in-out 500ms;
@@ -32,6 +17,15 @@
 
 .alert {
   padding: 3px !important;
-  margin-left: auto;
-  margin-top: auto;
+}
+
+#card-img {
+  width: 15vw;
+  height: 35vh;
+  float: left;
+  margin: 10px;
+}
+
+.card-body > div > button {
+  margin: 4px !important;
 }

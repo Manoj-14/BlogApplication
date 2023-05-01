@@ -19,9 +19,13 @@ export class ModifyBlogsComponent implements OnInit {
 
   fetchPosts() {
     this.blogService.fetchposts().subscribe(
-      (response) => {
+      (response: any) => {
         this.fetching = false;
         this.dbPosts = response;
+        console.log(response.currentValue);
+        console.log(
+          Math.floor((response.currentValue / response.totalValue) * 100)
+        );
       },
       (err) => {
         this.error = err.message;

@@ -3,36 +3,46 @@
   [ngClass]="{
     'border-full-modify': editContent,
   }"
+  *ngIf="editContent"
 >
   <div class="card-body">
-    <input
-      class="card-title h4 modify-textarea"
-      [readOnly]="!editContent"
-      [(ngModel)]="blogInp.title"
-      [ngClass]="{
-        'modify-textarea-outline': !editContent
-      }"
-    />
-    <textarea
-      class="card-text modify-textarea"
-      [(ngModel)]="blogInp.content"
-      [readOnly]="!editContent"
-      [ngClass]="{
-        'modify-textarea-outline': !editContent
-      }"
-      [id]="'txt' + blogInp.id"
-    ></textarea>
+    <div class="form-group">
+      <label for="img">Title: </label>
+      <input
+        placeholder="Enter Title"
+        class="form-control"
+        [readOnly]="!editContent"
+        [(ngModel)]="blogInp.title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="img">Image url: </label>
+      <input
+        type="url"
+        name="image"
+        class="form-control"
+        id="img"
+        placeholder="Enter Image URI"
+        [(ngModel)]="blogInp.image"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="'txt' + {{ blogInp.id }}">Content: </label>
+      <textarea
+        class="form-control"
+        [(ngModel)]="blogInp.content"
+        [readOnly]="!editContent"
+        [id]="'txt' + blogInp.id"
+        required
+        (click)="onTextareaLoad()"
+      ></textarea>
+    </div>
 
     <div class="btn-align">
-      <button
-        [disabled]="blogInp.content.length <= 200"
-        href="#"
-        class="btn btn-sm text-light bg-UTOrange"
-      >
-        View More
-      </button>
-      <button href="#" class="btn btn-sm btn-danger" (click)="onDeletePost()">
-        Delete
+      <button href="#" class="btn btn-sm btn-danger" (click)="onConcelEdit()">
+        Cancel
       </button>
       <button
         href="#"
@@ -43,6 +53,50 @@
       </button>
       <div class="alert alert-success" *ngIf="postSaved">
         Successfully Updated
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Displaying -->
+<div class="card m-4 border-left p-2" *ngIf="!editContent">
+  <div class="alert alert-success text-center" *ngIf="postSaved">
+    Successfully Updated
+  </div>
+  <div class="">
+    <img
+      class="card-img-top"
+      id="card-img"
+      src="{{ blogInp.image }}"
+      alt="{{ blogInp.title }}"
+    />
+    <div class="card-body">
+      <div>
+        <h4 class="card-title d-inline-block">{{ blogInp.title }}</h4>
+        <small class="text-muted">
+          Written By {{ blogInp.author | uppercase }}.</small
+        >
+        <p class="card-text">
+          {{ blogInp.content | contentLength : contentLen }}
+        </p>
+        <button
+          [disabled]="blogInp.content.length <= 200"
+          href="#"
+          class="btn btn-danger btn-sm bg-UTOrange"
+          (click)="onExpandMore()"
+        >
+          {{ btnStatus }}
+        </button>
+        <button href="#" class="btn btn-sm btn-danger" (click)="onDeletePost()">
+          Delete
+        </button>
+        <button
+          href="#"
+          class="btn btn-danger btn-sm bg-UTOrange"
+          (click)="onEditText()"
+        >
+          {{ modifyBtn }}
+        </button>
       </div>
     </div>
   </div>

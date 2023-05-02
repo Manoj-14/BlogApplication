@@ -11,7 +11,6 @@ export class BlogAppService {
   constructor(private httpClient: HttpClient) {}
 
   URL: string = 'http://localhost:3000/posts';
-  FILE_UPLOAD_URL = `http://localhost:3000/images`;
 
   createPost(postData: blog) {
     return this.httpClient.post(this.URL, postData);
@@ -35,20 +34,5 @@ export class BlogAppService {
 
   updatePost(updatedPost: blog) {
     return this.httpClient.put(`${this.URL}/${updatedPost.id}`, updatedPost);
-  }
-
-  uploadFile(file: File) {
-    let formData = new FormData();
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      const imageBase64 = reader.result as string;
-
-      const payload = {
-        image: imageBase64,
-      };
-    };
-
-    return this.httpClient.post(this.FILE_UPLOAD_URL, formData);
   }
 }

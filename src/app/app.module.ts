@@ -13,6 +13,7 @@ import { ContentLengthPipe } from './pipes/content-length.pipe';
 import { ModifyBlogsComponent } from './view-blogs/modify-blogs/modify-blogs.component';
 import { ModifyBlogComponent } from './view-blogs/modify-blogs/blog/blog.component';
 import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRouts: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +39,7 @@ const appRouts: Routes = [
     FormsModule,
     HttpClientModule,
     MatIconModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

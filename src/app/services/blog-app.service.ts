@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class BlogAppService {
   constructor(private httpClient: HttpClient) {}
 
-  URL: string = 'http://localhost:3000/posts';
+  URL: string = 'http://0.0.0.0:3000/posts';
 
   createPost(postData: blog) {
     return this.httpClient.post(this.URL, postData);
